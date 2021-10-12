@@ -1,9 +1,10 @@
 import Image from 'next/image'
+import Hero from '../components/Hero'
 
 const Home = () => {
   return (
     <div>
-      <h1>This is the home page</h1>
+      <Hero />
     </div>
   )
 }
