@@ -69,8 +69,8 @@ const Athletes = () => {
               )}
             </SwiperSlide>
           ))}
-          <button ref={sliderPrev}>Previous</button>
-          <button ref={sliderNext}>Next</button>
+          <button className={style.prev} ref={sliderPrev}><div className={style.arrow}></div></button>
+          <button className={style.next} ref={sliderNext}><div className={style.arrow}></div></button>
         </Swiper>
       </div>
       <div className={style.listingBtn}>

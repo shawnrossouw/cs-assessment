@@ -1,7 +1,23 @@
+import style from './style.module.css'
+import Logo from '../Logo'
+
 const Footer = () => {
   return (
-    <footer>
-      <h2>This is the footer</h2>
+    <footer className={style.footer}>
+      <div className={style.track}>
+        <span><Logo /></span>
+        <span><Logo /></span>
+        <span><Logo /></span>
+        <span><Logo /></span>
+        <span><Logo /></span>
+        <span><Logo /></span>
+        <span><Logo /></span>
+        <span><Logo /></span>
+        <span><Logo /></span>
+        <span><Logo /></span>
+        <span><Logo /></span>
+        <span><Logo /></span>
+      </div>
     </footer>
   )
 }
