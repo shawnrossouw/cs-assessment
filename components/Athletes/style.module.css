@@ -1,0 +1,131 @@
+.showcase {
+  background: var(--dusk);
+  padding: 6em 2em;
+  position: relative;
+  width: 100%;
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: var(--froth);
+    @media (min-width: 640px) {
+      height: 50%; 
+    }
+  }
+  h2 {
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    font-size: 2.5em;
+    padding: 0 0 2em 0;
+    width: 60%;
+    margin: 0 auto;
+    line-height: 40px;
+  }
+  .slides {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 0 2em 0;
+    @media (min-width: 640px) {
+      padding: 0 0 4em 0;
+    }
+    @media (min-width: 992px) {
+      width: 80%;
+    }
+    @media (min-width: 1200px) {
+      width: 70%;
+    }
+    .slide {
+      position: relative;
+      width: 100%;
+      figure {
+        position: relative;
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 50%;
+          background: var(--overlay-gradient);
+          border-radius: 15px;
+          transition: all .25s ease-in;
+          overflow: hidden;
+        }
+      }
+      img {
+        height: auto;
+        width: 100%;
+        border-radius: 15px;
+        transition: all .25s ease-in;
+      }
+      p {
+        position: absolute;
+        bottom: 3.5em;
+        left: 1em;
+        color: white;
+        font-weight: 500;
+        transition: all .25s ease-in;
+        font-size: 1.3em;
+        em {
+          font-weight: 600;
+          text-decoration: underline;
+          font-style: normal;
+        }
+      }
+      span {
+        position: absolute;
+        bottom: 3em;
+        left: 1.3em;
+        color: white;
+        font-weight: 700;
+        transition: all .25s ease-in;
+        font-size: .9em;
+        text-transform: uppercase;
+      }
+    }
+    .zoom {
+      @media (min-width: 640px) {
+        figure {
+          &:after {
+            transform: scale(1.3);
+            bottom: -7.5%;
+          }
+        }
+        img {
+          transform: scale(1.3);
+        }
+        p {
+          bottom: 0em;
+          left: 0;
+        }
+        span {
+          bottom: -2em;
+          left: 0;
+        }
+      }
+    }
+  }
+  .listingBtn {
+    display: flex;
+    justify-content: center;
+    button {
+      font-size: 1.1em;
+      font-weight: 700;
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      background: var(--apple);
+      color: white;
+      padding: 1em 2.5em;
+      border-radius: 50px;
+      height: 3.5em;
+      border: none;
+      text-transform: uppercase;
+    }
+  }
+  
+}

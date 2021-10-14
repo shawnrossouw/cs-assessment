@@ -8,6 +8,18 @@
   top: 0;
   left: 0;
   z-index: 2;
+  @media (min-width: 640px) {
+    padding: 2em 4em;
+  }
+  @media (min-width: 768px) {
+    align-items: unset;
+  }
+  @media (min-width: 1024px) {
+    max-width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2em 0;
+  }
   nav {
     .open {
       width: 2.5em;
@@ -41,6 +53,9 @@
         background: var(--apple);
         transition: all .25s ease;
       }
+      @media (min-width: 768px) {
+        display: none;
+      }
     }
     .close {
       background: none;
@@ -67,6 +82,9 @@
       span {
         width: 0;
       }
+      @media (min-width: 768px) {
+        display: none;
+      }
     }
     ul {
       position: fixed;
@@ -87,12 +105,41 @@
         padding: 0 0 2em 0;
         opacity: 0;
         visibility: hidden;
-        transition: all .25s ease .25s;
+        transition: all .25s ease .3s;
+        transform: translateY(1em);
+        @media (min-width: 768px) {
+          pointer-events: all;
+        }
         a {
           color: var(--apple);
           font-size: 2.5em;
           font-weight: 700;
           text-transform: uppercase;
+          transition: color .25s ease;
+        }
+        &:hover {
+          cursor: pointer;
+          a {
+            color: var(--apple);
+          }
+        }
+      }
+      @media (min-width: 768px) {
+        opacity: 1;
+        visibility: visible;
+        position: unset;
+        height: unset;
+        top: unset;
+        right: unset;
+        flex-direction: row;
+        li {
+          opacity: 1;
+          visibility: visible;
+          padding: 0 2em 0 0;
+          a {
+            font-size: .9em;
+            color: white;
+          }
         }
       }
     }
@@ -105,6 +152,10 @@
       li {
         opacity: 1;
         visibility: visible;
+        transform: translateY(0);
+      }
+      @media (min-width: 768px) {
+        display: none;
       }
     }
   }

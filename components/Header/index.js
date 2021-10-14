@@ -18,9 +18,9 @@ const Header = () => {
       <nav>
         <button onClick={handleToggle} className={`${open ? style.close : style.open}`}><span></span></button>
         <ul className={`${open ? `${style.show}` : ''}`}>
-          <li onClick={handleToggle}><Link href='/'><a>Athletes</a></Link></li>
-          <li onClick={handleToggle}><Link href='/'><a>Log In</a></Link></li>
-          <li onClick={handleToggle}><Link href='/'><a>Sign Up Now</a></Link></li>
+          <li><Link href='/'><a>Athletes</a></Link></li>
+          <li><Link href='/'><a>Log In</a></Link></li>
+          <li><Link href='/'><a>Sign Up Now</a></Link></li>
         </ul>
       </nav>
     </header>
