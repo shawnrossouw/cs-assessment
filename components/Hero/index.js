@@ -1,13 +1,30 @@
 import style from './style.module.css'
 import ScrollDown from '../ScrollButton'
 
-const Hero = () => {
+const Hero = ({ blok }) => {
+  // console.log(blok.subtitle.content[0])
+  // blok.subtitle.content.map(item => (
+
+  //   item.content.map(node => {
+  //     console.log(node.text)
+  //   })
+  // ))
   return (
     <section className={style.hero}>
-      <img src="./hero.jpg" alt="" />
+      <img src={blok.image.filename} alt={blok.image.alt} />
       <div className={style.heroContent}>
-        <h1>LOREM IPSUM. <span>DOLORE AMET.</span></h1>
-        <p><span>Lorem ipsum</span> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+        {blok.title.content.map((item, k) => (
+          item.content.map((node, k) => (
+            <h1 key={k} dangerouslySetInnerHTML={{ __html: node.text }} />
+          ))
+        ))}
+
+        {blok.subtitle.content.map((item, k) => (
+          item.content.map((node, k) => (
+            <p key={k} dangerouslySetInnerHTML={{ __html: node.text }} />
+          ))
+        ))}
       </div>
       <ScrollDown />
     </section>
