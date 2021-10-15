@@ -5,34 +5,14 @@ import { Navigation } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-const Athletes = () => {
+const Athletes = ({ blok }) => {
 
-  const content = [
-    {
-      image: './player1.jpg',
-      alt: 'Neymar Jr',
-      name: 'Neymar Jr',
-      category: 'Football'
-    },
-    {
-      image: './player2.jpg',
-      alt: 'Pelé',
-      name: 'Pelé',
-      category: 'Football'
-    },
-    {
-      image: './player3.jpg',
-      alt: 'Marcus Rashford',
-      name: 'Marcus Rashford',
-      category: 'Football'
-    },
-  ]
   const sliderNext = useRef(null);
   const sliderPrev = useRef(null);
 
   return (
     <section className={style.showcase}>
-      <h2>Lorem ipsum dolor sit amet, consectetur adipiscing.</h2>
+      <h2>{blok.title}</h2>
       <div className={style.slides}>
         <Swiper
           modules={[Navigation]}
@@ -58,12 +38,12 @@ const Athletes = () => {
           loop={true}
           autoHeight={true}
         >
-          {content.map((player, i) => (
+          {blok.slider.map((player, i) => (
             <SwiperSlide key={i}>
-              {({ isActive, isPrev, isNext }) => (
+              {({ isNext }) => (
                 <div className={`${style.slide} ${isNext ? `${style.zoom}` : ''}`}>
-                  <figure><img src={player.image} alt={player.alt} /></figure>
-                  <p>Connect with <em>{player.name}</em></p>
+                  <figure><img src={player.image.filename} alt={player.image.alt} /></figure>
+                  <p>{player.text} <em>{player.name}</em></p>
                   <span>{player.category}</span>
                 </div>
               )}
