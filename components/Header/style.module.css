@@ -136,6 +136,9 @@
           opacity: 1;
           visibility: visible;
           padding: 0 2em 0 0;
+          &:nth-of-type(2) {
+            padding: 0 4em 0 0;
+          }
           a {
             font-size: .9em;
             color: white;
