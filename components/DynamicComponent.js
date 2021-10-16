@@ -2,11 +2,13 @@ import SbEditable from 'storyblok-react'
 import Hero from './Hero'
 import Athletes from './Athletes'
 import Page from './Page'
+import Header from './Header'
 
 const Components = {
   'hero': Hero,
   'athletes': Athletes,
-  'home-page': Page
+  'home-page': Page,
+  'header': Header
 }
 
 const DynamicComponent = ({ blok }) => {

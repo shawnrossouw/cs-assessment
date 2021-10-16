@@ -1,25 +1,25 @@
 @font-face {
-  font-family: Graphik;
-  font-weight: 500;
-  font-style: normal;
-  src: url('/graphik-regular.woff2') format("woff2"), url('/graphik-regular.woff') format("woff");
-  font-display: swap;
+	font-family: Graphik;
+	font-weight: 500;
+	font-style: normal;
+	src: url("/graphik-regular.woff2") format("woff2"), url("/graphik-regular.woff") format("woff");
+	font-display: swap;
 }
 
 @font-face {
-  font-family: Graphik;
-  font-weight: 600;
-  font-style: normal;
-  src: url('/graphik-semibold.woff2') format("woff2"), url('/graphik-semibold.woff') format("woff");
-  font-display: swap;
+	font-family: Graphik;
+	font-weight: 600;
+	font-style: normal;
+	src: url("/graphik-semibold.woff2") format("woff2"), url("/graphik-semibold.woff") format("woff");
+	font-display: swap;
 }
 
 @font-face {
-  font-family: Graphik;
-  font-weight: 700;
-  font-style: normal;
-  src: url('/graphik-bold.woff2') format("woff2"), url('/graphik-bold.woff') format("woff");
-  font-display: swap;
+	font-family: Graphik;
+	font-weight: 700;
+	font-style: normal;
+	src: url("/graphik-bold.woff2") format("woff2"), url("/graphik-bold.woff") format("woff");
+	font-display: swap;
 }
 
 * {
@@ -31,15 +31,15 @@
 }
 
 html {
-  font-size: 100%;
-	scroll-behavior: auto;
+	font-size: 100%;
+	scroll-behavior: smooth;
 	-webkit-scroll-behavior: smooth;
 }
 
 :root {
 	--apple: #449764;
-  --dusk: #1D201F;
-  --froth: #FEFBF2;
+	--dusk: #1d201f;
+	--froth: #fefbf2;
 	--dusk-gradient: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
 	--overlay-gradient: linear-gradient(to top, rgba(29, 32, 31, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
 }

@@ -1,53 +1,113 @@
 .scrollDown {
-  position: absolute;
-  bottom: -2em;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-  @media (min-width: 1350px) {
-    bottom: -3.5em;
-  }
+	position: absolute;
+	bottom: -2em;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1;
+	@media (min-width: 1200px) {
+		bottom: -2.5em;
+	}
+	@media (min-width: 1350px) {
+		bottom: -3.5em;
+	}
 }
 .scrollBtn {
-  position: relative;
-  display: block;
-  border: none;
-  color: white;
-  font-weight: 700;
-  line-height: .9em;
-  width: 80px;
-  height: 80px;
-  background: var(--dusk);
-  border-radius: 100%;
-  white-space: pre-wrap;
-  padding: 1em;
-  cursor: pointer;
-  transition: all .25s ease;
-  @media (min-width: 992px) {
-    width: 90px;
-    height: 90px;
-  }
-  &:hover {
-    background: var(--apple);
-  }
+	position: relative;
+	display: block;
+	border: none;
+	font-weight: 700;
+	line-height: 0.9em;
+	width: 80px;
+	height: 80px;
+	background: var(--dusk);
+	border-radius: 100%;
+	white-space: pre-wrap;
+	padding: 1em;
+	cursor: pointer;
+	transition: all 0.25s ease;
+	@media (min-width: 992px) {
+		width: 90px;
+		height: 90px;
+	}
+	a {
+		color: white;
+	}
+	&:before {
+		content: "";
+		width: 80px;
+		height: 80px;
+		border: 3px solid var(--apple);
+		border-radius: 100%;
+		transform: scale(1);
+		position: absolute;
+		top: 3px;
+		left: 3px;
+		z-index: -1;
+	}
+	&:hover {
+		background: var(--apple);
+		&:before {
+			animation: pulse 1s ease infinite running;
+		}
+	}
 }
 .arrows {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin: 2em 0 0 0;
-  .arrow {
-    box-sizing: border-box;
-    height: 30px;
-    width: 30px;
-    border-style: solid;
-    border-color: white;
-    border-width: 0px 3px 3px 0px;
-    transform: rotate(45deg);
-  @media (min-width: 992px) {
-    width: 40px;
-    height: 40px;
-    }
-  }
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin: 2em 0 0 0;
+	@media (min-width: 1200px) {
+		margin: 3em 0 0 0;
+	}
+	@media (min-width: 1350px) {
+		margin: 4em 0 0 0;
+	}
+	.arrow {
+		box-sizing: border-box;
+		height: 30px;
+		width: 30px;
+		border-style: solid;
+		border-color: white;
+		border-width: 0px 3px 3px 0px;
+		transform: rotate(45deg);
+		@media (min-width: 992px) {
+			width: 40px;
+			height: 40px;
+		}
+		&:nth-child(1) {
+			animation: downwards 2s ease 0s infinite running;
+		}
+		&:nth-child(2) {
+			animation: downwards 2s ease 0.2s infinite running;
+		}
+		&:nth-child(3) {
+			animation: downwards 2s ease 0.25s infinite running;
+		}
+	}
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1.5);
+		opacity: 0;
+	}
+}
+
+@keyframes downwards {
+	0% {
+		opacity: 0;
+		transform: translateY(-0.5em) rotate(45deg);
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(0.5em) rotate(45deg);
+	}
 }
