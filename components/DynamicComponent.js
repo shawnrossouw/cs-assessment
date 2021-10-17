@@ -1,26 +1,30 @@
-import SbEditable from 'storyblok-react'
-import Hero from './Hero'
-import Athletes from './Athletes'
-import Page from './Page'
-import Header from './Header'
+import SbEditable from "storyblok-react";
+import Hero from "./Hero";
+import Athletes from "./Athletes";
+import Page from "./Page";
+import Header from "./Header";
 
 const Components = {
-  'hero': Hero,
-  'athletes': Athletes,
-  'home-page': Page,
-  'header': Header
-}
+	hero: Hero,
+	athletes: Athletes,
+	"home-page": Page,
+	header: Header,
+};
 
 const DynamicComponent = ({ blok }) => {
-  // check if component is defined above
-  if (typeof Components[blok.component] !== 'undefined') {
-    const Component = Components[blok.component]
-    // wrap with SbEditable for visual editing
-    return (<SbEditable content={blok}><Component blok={blok} /></SbEditable>)
-  }
+	if (typeof Components[blok.component] !== "undefined") {
+		const Component = Components[blok.component];
+		return (
+			<SbEditable content={blok}>
+				<Component blok={blok} />
+			</SbEditable>
+		);
+	}
+	return (
+		<p>
+			The component <strong>{blok.component}</strong> has not been created yet.
+		</p>
+	);
+};
 
-  // fallback if the component doesn't exist
-  return (<p>The component <strong>{blok.component}</strong> has not been created yet.</p>)
-}
-
-export default DynamicComponent
+export default DynamicComponent;
