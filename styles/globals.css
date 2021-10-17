@@ -54,6 +54,10 @@ body {
 	font-weight: 500;
 	font-family: Gilroy, sans-serif;
 	color: var(--charcoal90);
+	@media (min-width: 1824px) {
+		max-width: 80%;
+		margin: 0 auto;
+	}
 }
 
 img {

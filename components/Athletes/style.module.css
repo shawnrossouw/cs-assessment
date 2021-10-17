@@ -226,9 +226,11 @@
 			border: none;
 			text-transform: uppercase;
 			cursor: pointer;
-			transition: background 0.25s ease;
+			transition: all 0.25s ease;
 			&:hover {
-				background: var(--dusk);
+				box-shadow: 0 0.5em 0.5em -0.4em var(--apple);
+				transform: translateY(-0.25em);
+				background: rgba(68, 151, 100, 0.8);
 			}
 		}
 	}

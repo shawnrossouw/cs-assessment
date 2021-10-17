@@ -1,17 +1,46 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import style from "./style.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Athletes = ({ blok }) => {
 	const sliderNext = useRef(null);
 	const sliderPrev = useRef(null);
 
+	const [ref, inView] = useInView({
+		threshold: 0.2,
+	});
+	const animation = useAnimation();
+
+	useEffect(() => {
+		if (inView) {
+			animation.start({
+				opacity: 1,
+				y: 0,
+				transition: {
+					duration: 1,
+					delay: 0.2,
+				},
+			});
+		}
+		if (!inView) {
+			animation.start({
+				opacity: 0,
+				y: -32,
+				transition: {
+					duration: 1,
+				},
+			});
+		}
+	}, [inView]);
+
 	return (
-		<section className={style.showcase} id="athletes">
-			<h2>{blok.title}</h2>
+		<section className={style.showcase} id="athletes" ref={ref}>
+			<motion.h2 animate={animation}>{blok.title}</motion.h2>
 			<div className={style.slides}>
 				<Swiper
 					modules={[Navigation]}
