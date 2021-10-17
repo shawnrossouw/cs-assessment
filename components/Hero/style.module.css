@@ -54,6 +54,15 @@
 		@media (min-width: 1200px) {
 			justify-content: flex-start;
 		}
+		> div {
+			width: 100%;
+			@media (min-width: 1824px) {
+				width: 60%;
+			}
+			@media (min-width: 2560px) {
+				width: 50%;
+			}
+		}
 		h1 {
 			color: white;
 			font-weight: 700;
@@ -64,7 +73,6 @@
 			}
 			@media (min-width: 480px) {
 				font-size: 4em;
-				width: 50%;
 			}
 			@media (min-width: 640px) {
 				font-size: 5em;
@@ -74,54 +82,52 @@
 			}
 			@media (min-width: 1200px) {
 				font-size: 9em;
-				margin: 0 6rem 0 0;
+
 				line-height: 138.55px;
-				width: 60%;
 			}
 			@media (min-width: 1350px) {
 				font-size: 10em;
-				margin: 0 4rem 0 0;
-				width: 50%;
 			}
 		}
-		p {
-			color: white;
-			font-size: 1.1em;
-			font-weight: 600;
-			line-height: 30px;
-			span {
-				color: var(--apple);
-				font-weight: 600;
-			}
+		article {
 			@media (min-width: 480px) {
 				font-size: 1.2em;
-				width: 80%;
 			}
 			@media (min-width: 640px) {
 				font-size: 1.3em;
 			}
-			@media (min-width: 768px) {
-				width: 55%;
-			}
 			@media (min-width: 992px) {
-				width: 35%;
 				align-self: flex-end;
-				margin: 0 0 2em 0;
-			}
-			@media (min-width: 1024px) {
-				width: 30%;
+				margin: 0 0 2em 2em;
 			}
 			@media (min-width: 1200px) {
 				font-size: 1.5em;
 				line-height: 36px;
+				justify-self: flex-start;
 			}
 			@media (min-width: 1350px) {
-				margin: 0 0 2em 5em;
+				margin: 0 0 2em 2em;
 			}
 			@media (min-width: 1400px) {
-				margin: 0 0 1em 3em;
-				width: 27%;
+				margin: 0 0 1em 1em;
 				font-size: 1.87em;
+				width: 80%;
+			}
+			@media (min-width: 1600px) {
+				width: 60%;
+			}
+			@media (min-width: 1824px) {
+				width: 30%;
+			}
+			p {
+				color: white;
+				font-size: 1.1em;
+				font-weight: 600;
+				line-height: 30px;
+				span {
+					color: var(--apple);
+					font-weight: 600;
+				}
 			}
 		}
 	}
