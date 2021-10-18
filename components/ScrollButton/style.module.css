@@ -1,9 +1,15 @@
 .scrollDown {
 	position: absolute;
-	bottom: -2em;
+	bottom: -6em;
 	left: 50%;
 	transform: translateX(-50%);
 	z-index: 1;
+	@media (min-width: 375px) {
+		bottom: -4em;
+	}
+	@media (min-width: 1024px) {
+		bottom: -5em;
+	}
 	@media (min-width: 1200px) {
 		bottom: -2.5em;
 	}
@@ -25,7 +31,7 @@
 	padding: 1em;
 	cursor: pointer;
 	transition: all 0.25s ease;
-	@media (min-width: 768px) {
+	@media (min-width: 992px) {
 		&:before {
 			content: "";
 			width: 80px;
