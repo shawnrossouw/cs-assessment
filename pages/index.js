@@ -1,5 +1,5 @@
 import Layout from "../components/Layout";
-import Storyblok, { useStoryblok } from "./lib/storyblok";
+import Storyblok, { useStoryblok } from "../lib/storyblok";
 import DynamicComponent from "../components/DynamicComponent";
 
 const Home = ({ story, preview }) => {
