@@ -95,6 +95,7 @@
 					font-weight: 600;
 					text-decoration: underline;
 					font-style: normal;
+					cursor: pointer;
 				}
 			}
 			span {

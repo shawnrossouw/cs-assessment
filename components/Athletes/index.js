@@ -36,7 +36,7 @@ const Athletes = ({ blok }) => {
 				},
 			});
 		}
-	}, [inView]);
+	}, [inView, animation]);
 
 	return (
 		<section className={style.showcase} id="athletes" ref={ref}>
