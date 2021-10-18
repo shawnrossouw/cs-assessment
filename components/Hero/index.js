@@ -12,19 +12,16 @@ const Hero = ({ blok }) => {
 		visible: { opacity: 1, transition: { duration: 2, delay: 1.2 } },
 		hidden: { opacity: 0 },
 	};
-
 	const [elementTop, setElementTop] = useState(0);
 	const ref = useRef(null);
 	const { scrollY } = useViewportScroll();
-
 	const y = useTransform(scrollY, [elementTop, elementTop + 10], [0, -2], {
 		clamp: false,
 	});
 
 	useEffect(() => {
-		const element = ref.current;
 		setElementTop(5);
-	}, [ref]);
+	}, []);
 
 	return (
 		<section className={style.hero}>
@@ -34,7 +31,6 @@ const Hero = ({ blok }) => {
 				src={blok.image.filename}
 				alt={blok.image.alt}
 			/>
-
 			<div className={style.heroContent}>
 				{blok.title.content.map((item) =>
 					item.content.map((node, k) => (

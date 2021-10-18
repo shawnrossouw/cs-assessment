@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
 			<Head>
 				<title>Course Studio Assessment</title>
 				<meta name="Assessment for Course Studio" content="Next.js app with storyblok" />
-				<meta name="keywords" content="Course Studio Assesment" />
+				<meta name="keywords" content="Course Studio Assessment" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Header />

@@ -13,7 +13,6 @@ export function useStoryblok(originalStory, preview) {
 	let [story, setStory] = useState(originalStory);
 
 	// adds the events for updating the visual editor
-	// see https://www.storyblok.com/docs/guide/essentials/visual-editor#initializing-the-storyblok-js-bridge
 	function initEventListeners() {
 		const { StoryblokBridge } = window;
 		if (typeof StoryblokBridge !== "undefined") {
@@ -48,33 +47,6 @@ export function useStoryblok(originalStory, preview) {
 			});
 		}
 	}
-
-	// appends the bridge script tag to our document
-	// see https://www.storyblok.com/docs/guide/essentials/visual-editor#installing-the-storyblok-js-bridge
-	function addBridge(callback) {
-		// check if the script is already present
-		const existingScript = document.getElementById("storyblokBridge");
-		if (!existingScript) {
-			const script = document.createElement("script");
-			script.src = "//app.storyblok.com/f/storyblok-v2-latest.js";
-			script.id = "storyblokBridge";
-			document.body.appendChild(script);
-			script.onload = () => {
-				// once the scrip is loaded, init the event listeners
-				callback();
-			};
-		} else {
-			callback();
-		}
-	}
-
-	useEffect(() => {
-		// only load inside preview mode
-		if (preview) {
-			// first load the bridge, then initialize the event listeners
-			addBridge(initEventListeners);
-		}
-	}, [originalStory, preview, setStory]); // runs the effect only once & defines effect dependencies
 
 	return story;
 }
